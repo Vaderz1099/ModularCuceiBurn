@@ -62,7 +62,7 @@ const CameraScreen = () => {
 
   const [imageBase64, setImageBase64] = useState('');
   const API_SCHEMA = 'http';
-  const API_HOST = 'backend-app-124923626.us-east-1.elb.amazonaws.com';
+  const API_HOST = 'backend-app-1603697300.us-east-1.elb.amazonaws.com';
   const API_PATH = '/';
 
   const headers = {
@@ -92,9 +92,9 @@ const CameraScreen = () => {
   };
 
   const uploadImageMethod = async () => {
-
-    const latitud = JSON.stringify(location?.coords?.latitude)
-    const longitud = JSON.stringify(location?.coords?.longitude)
+    
+    const latitud = 20.656912
+    const longitud = -103.326198
     const response = await uploadImage({
       img: imageBase64,
       coordenadas: `${latitud}%2C${longitud}`,
@@ -441,12 +441,12 @@ const CameraScreen = () => {
             <MenuButtonItem text={'Analizar Imagen'} onPress={uploadImageMethod}>
 
             </MenuButtonItem>
-            <Text>
+            {/* <Text>
                 {"              Latitud: "}{text}
             </Text>
             <Text>
                 {"              Latitud: "}{time}
-            </Text>
+            </Text> */}
             
           </View>
 
